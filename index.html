@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sekolah Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- asset logo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- asset font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=BBH+Bartle&family=Momo+Trust+Display&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- library animasi AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body id="body">
+    <div id="beranda"></div>
+    <header>
+        <div class="logo" data-aos="fade-down" data-aos-duration="1000">
+            <h1>Sekolah Sma Jaya</h1>
+            <p>Kami Datang Untuk Berkembang</p>
+        </div>
+        <nav>
+            <ul>
+                <li data-aos="fade-down" data-aos-duration="1200" data-aos-delay="150"><a href="#beranda">Beranda <i class="fas fa-school"></i></a></li>
+                <li data-aos="fade-down" data-aos-duration="1200" data-aos-delay="300"><a href="#tentang">Tentang <i class="fas fa-circle-info"></i></a></li>
+                <li data-aos="fade-down" data-aos-duration="1200" data-aos-delay="450"><a href="#lokasi">Lokasi Sekolah <i class="fas fa-map"></i></a></li>
+                <li data-aos="fade-down" data-aos-duration="1200" data-aos-delay="550">
+                    <div class="conten-menu-nav">
+                        <button id="button-daftar">Daftar <i class="fas fa-caret-down" id="logo-btn-daftar"></i></button>
+                        <div class="konten" id="konten-daftar">
+                            <ul>
+                                <li class="konten-daftar"><a href="#jurusan">Daftar Via Online <i class="fas fa-clipboard-list"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="button-menu-mobile">
+            <button id="btn-menu-mobile"><i class="fas fa-align-justify" id="logo-btn"></i></button>
+            <div class="konten-menu-mobile" id="menu-mobile">
+                <ul>
+                    <li><a href="#beranda"><i class="fas fa-school"></i> beranda</a></li>
+                    <li><a href="#tentang"><i class="fas fa-circle-info"></i> Tentang</a></li>
+                    <li><a href="#lokasi"><i class="fas fa-map"></i>Lokasi</a></li>
+                    <li><a href="#jurusan"><i class="fas fa-clipboard-list"></i> Daftar Via Online</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="background"></div>
+        <div class="konten">
+            <p class="helo" data-aos="fade-up" data-aos-duration="1500">Selamat Datang Di</p>
+            <h2 data-aos="fade-up" data-aos-duration="1500" data-aos-delay="250">Sekolah Sma Jaya</h2>
+            <p class="deskripsi" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="450">Kami Datang Untuk Berkembang <span>Sekolah Sma Jaya</span> Adalah Sekolah Mencari Inspirasi Dan Berkembang Menjadi Manusia Yang Berguna Di Masa yang Akan Datang</p>
+            <div class="list-tombol" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="650">
+                <a href="#fasilitas">Lihat Fasilitas <i class="fas fa-building-user"></i></a>
+                <a href="#jurusan">Lihat Jurusan <i class="fas fa-book-open"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="tentang">
+        <div class="judul">
+            <span></span><h3>Mengapa Meilih Kami</h3><span></span>
+        </div>
+        <div class="konten">
+            <div class="left">
+                <div class="box">
+                    <div class="judul">
+                        <h3>Kurikulum Masa Depan</h3>
+                        <p>Pembelajaran modern yang relevan dengan perkembangan zaman</p>
+                    </div>
+                    <div class="logo">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="judul">
+                        <h3>Fasilitas Terintegrasi</h3>
+                        <p>Sarana belajar lengkap untuk mendukung bakat dan minat siswa</p>
+                    </div>
+                    <div class="logo">
+                        <i class="fas fa-building"></i>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="judul">
+                        <h3>Pembinaan Karakter</h3>
+                        <p>Membentuk lulusan yang berintegritas dan berbudi pekerti luhur</p>
+                    </div>
+                    <div class="logo">
+                        <i class="fas fa-hand-holding-medical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <p>Lingkungan Sekolah</p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="about-school" id="tentang">
+            <div class="judul">
+                <span></span><h3>Tentang Kami</h3><span></span>
+            </div>
+            <div class="konten-about-school">
+                <div class="left">
+                    <img src="gambar/diskusi.webp" alt="">
+                </div>
+                <div class="right">
+                    <div class="judul"><p>Membentuk Karakter & <span>Mencetak Prestasi</span> di Era Digital</p></div>
+                    <div class="deskripsi">
+                        <span></span><p>SMA Jaya adalah sekolah yang hadir untuk mencetak generasi unggul yang siap berkembang di era digital. Dengan pendekatan pembelajaran berbasis karakter dan teknologi, kami membekali siswa dengan keterampilan abad 21, kecakapan hidup, dan prestasi akademik yang membanggakan</p>
+                    </div>
+                    <div class="box-deskripsi">
+                        <div class="box">
+                            <div class="judul">
+                                <i class="fas fa-heart-circle-check"></i> <p>Lingkungan Aman</p>
+                            </div>
+                            <div class="deskripsi">
+                                <p>Menyediakan Lingkungan belajar yang aman dan kondusif.</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="judul">
+                                <i class="fas fa-bolt"></i> <p>Kurikulum Adaktif</p>
+                            </div>
+                            <div class="deskripsi">
+                                <p>Kurikulum yang dapat menyesuaikan diri dengan perkembangan zaman.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="jurusan" id="jurusan">
+            <div class="judul">
+                <span></span><h4>Daftar Jurusan</h4><span></span>
+            </div>
+            <div class="konten-jurusan">
+                <div class="box">
+                    <div class="judul">
+                        <p>Akutansi</p>
+                    </div>
+                    <div class="deskripsi">
+                        <p>210K<span>/bulan</span></p>
+                    </div>
+                    <div class="lorem">
+                        <p>Program unggulan yang mempersiapkan siswa menjadi ahli di bidang keuangan, akuntansi, dan perpajakan</p>
+                    </div>
+                    <div class="list-info">
+                        <ul>
+                            <li><i class="fas fa-check"></i> <p>Laboratorium Komputer</p></li>
+                            <li><i class="fas fa-check"></i> <p>Ruang Praktek Simulasi Perusahaan</p></li>
+                            <li><i class="fas fa-check"></i> <p>Software Akuntansi berlisensi</p></li>
+                            <li><i class="fas fa-xmark"></i> <p>Jas laboratorium</p></li>
+                        </ul>
+                    </div>
+                    <div class="button-submit">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkug4COcrtRNnweW0_BQugHvFeQ1LEaFzo40yopvDNpsYWxQ/viewform?usp=dialog" target="_blank">Daftar</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="judul">
+                        <p>MIPA</p>
+                    </div>
+                    <div class="deskripsi">
+                        <p>225K<span>/bulan</span></p>
+                    </div>
+                    <div class="lorem">
+                        <p>Program unggulan yang mengembangkan kemampuan analisis, penelitian, dan pemecahan masalah melalui pendekatan ilmiah</p>
+                    </div>
+                    <div class="list-info">
+                        <ul>
+                            <li><i class="fas fa-check"></i> <p>Laboratorium Lengkap</p></li>
+                            <li><i class="fas fa-check"></i> <p>Laboratorium Komputer khusus</p></li>
+                            <li><i class="fas fa-check"></i> <p>Greenhouse untuk praktik botani</p></li>
+                            <li><i class="fas fa-xmark"></i> <p>Jas Khusus LAB</p></li>
+                        </ul>
+                    </div>
+                    <div class="button-submit">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtogbF2Sl_exRSZmtOjKkWwZywAj8pL7GWPu2TgbcDX8KKVQ/viewform?usp=dialog" target="_blank">Daftar</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="judul">
+                        <p>RPL</p>
+                    </div>
+                    <div class="deskripsi">
+                        <p>245K<span>/bulan</span></p>
+                    </div>
+                    <div class="lorem">
+                        <p>Program unggulan yang mencetak developer handal siap terjun di era industri 4.0 dan digitalisasi</p>
+                    </div>
+                    <div class="list-info">
+                        <ul>
+                            <li><i class="fas fa-check"></i> <p>LAB Komputer dengan spesifikasi tinggi</p></li>
+                            <li><i class="fas fa-check"></i> <p>Software Developer Tools berlisensi</p></li>
+                            <li><i class="fas fa-check"></i> <p>Kerjasama dengan tech company</p></li>
+                            <li><i class="fas fa-xmark"></i> <p>Biaya sertifikasi profesional</p></li>
+                        </ul>
+                    </div>
+                    <div class="button-submit">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXoIg-dWR1dEaC3gBxS8uQBuNkbfBUIVn6Np9HvGKkiuQIZw/viewform?usp=publish-editor" target="_blank">Daftar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="judul-fasilitas" id="fasilitas">
+            <span></span><h5>Fasilitas</h5><span></span>
+        </div>
+        <section class="fasilitas">
+                <div class="konten-fasilitas">
+                    <div class="left">
+                        <p>Ruangan Asrama</p>
+                        <div class="background"></div>
+                    </div>
+                    <div class="right">
+                        <div class="top">
+                            <div class="deskripsi">
+                                <p>Ruang Olaraga</p>
+                            </div>
+                            <div class="background"></div>
+                        </div>
+                        <div class="bottom">
+                            <div class="deskripsi">
+                                <p>Ruang Komputer</p>
+                            </div>
+                            <div class="background"></div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section class="maps-sekolah" id="lokasi">
+            <div class="judul">
+                <span></span><h5>kami disini</h5><span></span>
+            </div>
+            <div class="konten-maps">
+                <div class="konten-kiri">
+                    <h5>Lokasi Sekolah</h5>
+                    <p>Jl. Pendidikan No. 123, Kelurahan Bagan Batu,Kecamatan Riau Kota, Sumatera Utara.</p>
+                    <p>Jam Operasional Sekolah : Senin - Jumat : 07.30 - 15.30 WIB Sabtu : 08.00 - 12.00 WIB</p>
+                </div>
+                <div class="konten-kanan">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15952.226022590976!2d100.4065740213727!3d1.702774613677957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1770800211783!5m2!1sid!2sid" width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="maps"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="judul">
+            <h6>Sekolah Sma Jaya</h6>
+        </div>
+        <div class="konten-footer">
+            <div class="box">
+                <div class="judul">
+                    <p class="judul-text">Ikuti Kami</p>
+                </div>
+                <div class="konten">
+                    <a href="#"><i class="fab fa-tiktok"></i> Tiktok sekolah</a>
+                    <a href="#"><i class="fab fa-youtube"></i> youtube sekolah</a>
+                    <a href="#"><i class="fab fa-instagram"></i> instagram sekolah</a>
+                    <a href="#"><i class="fab fa-facebook"></i> facebook sekolah</a>
+                </div>
+            </div>
+            <div class="box">
+                    <div class="judul">
+                    <p class="judul-text">Menu</p>
+                </div>
+                <div class="konten">
+                    <a href="#"><i class="fas fa-school"></i> Beranda</a>
+                    <a href="#"><i class="fas fa-circle-info"></i> Tentang Sekolah</a>
+                    <a href="#"><i class="fas fa-map"></i> Lokasi Sekolah</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="judul">
+                    <div class="judul">
+                    <p class="judul-text">Hubungi Kami</p>
+                </div>
+                <div class="konten">
+                    <p class="konten-child"><i class="fas fa-envelopes-bulk"></i> sekolah-sma-jaya@gmail.com</p>
+                    <a href="#"><i class="fab fa-whatsapp"></i> chat admin</a>
+                    <p class="konten-child"><i class="fas fa-phone"></i> 0813 2718 0514</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1218 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    transition: all .4s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#beranda {
+    position: absolute;
+    top: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .2px 5px;
+    position: sticky;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    z-index: 999;
+    background-color: white;
+}
+
+header .button-menu-mobile {
+    display: none;
+}
+
+header .logo {
+    display: flex;
+    flex-direction: column;
+}
+
+header .logo h1 {
+    font-family: "poppins" , sans-serif;
+    font-size: clamp(10px,1.6em,48px);
+    color: green;
+    width: max-content;
+}
+
+header .logo p {
+    font-weight: 500;
+    font-size: clamp(10px,.7em,20px);
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: clamp(10px, .9em, 24px);
+    font-weight: 520;
+    font-family: "Poppins", sans-serif;
+    transition: all .3s;
+    padding: 28px 12px;
+    transform: uppercase;
+    position: relative;  /* Wajib biar pseudo-element ::before bisa diposisikan */
+    display: inline-block; /* Agar posisi relative bekerja dengan baik */
+}
+
+header nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;       
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    transition: width 0.6s ease; 
+}
+
+
+header nav ul li a:hover::before {
+    width: 100%;
+}
+
+header nav ul li a:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+header nav ul li button {
+    padding: 10px 25px;
+    cursor: pointer;
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 10px;
+    background-color: green;
+    color: white;
+    border-radius: 24px;
+    border: none;
+    font-weight: 650;
+    /* margin-left: 20px; */
+}
+
+header nav ul li button.active i {
+    rotate: 180deg;
+}
+
+header nav ul li button:hover {
+    padding: 10px 25px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(47, 126, 47);
+}
+
+header nav ul li button i {
+    margin-top: 1.5px;
+}
+
+header nav ul li a i {
+    margin-left: 3px;
+    font-size: clamp(10px,.9em,20px);
+}
+
+header .conten-menu-nav {
+    position: relative;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .conten-menu-nav .konten {
+    position: absolute;
+    top: 100%;
+    margin: 0px 0px;
+    width: max-content;
+    height: max-content;
+    padding: 5px;
+    opacity: 0; 
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s;
+}
+
+header .conten-menu-nav .konten.active {
+    transform: translateY(0px);
+    opacity: 1;
+    visibility: visible;
+}
+
+header .conten-menu-nav #logo-btn-daftar {
+    rotate: 0deg;
+}
+
+
+header .conten-menu-nav #logo-btn-daftar.active {
+    rotate: -180deg;
+}
+
+header .conten-menu-nav .konten ul {
+    gap: 0px;
+    padding: 0px;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    background-color: rgb(218, 216, 223);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+header .conten-menu-nav .konten ul .konten-daftar {
+    padding: 0px;
+    width: 100%;
+}
+
+header .conten-menu-nav .konten ul .konten-daftar a {
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    width: 100%;
+    align-items: center;
+    text-align: left;
+    display: flex;
+    gap: 10px;
+    background-color: #333;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+header .conten-menu-nav .konten ul .konten-daftar a::before {
+    display: none;
+}
+
+/* konten alert daftar */
+
+
+/* hero content */
+.hero {
+    width: 100%;
+    min-height: 420px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero .background {
+    width: 100%;
+    height: 100%;
+    background-image: url(gambar/belajar.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    filter: brightness(35%);
+}
+
+.hero .konten {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: rgb(243, 235, 235);
+}
+
+.hero .konten .helo {
+    font-weight: 620;
+    font-size: clamp(10px,.9em,28px);
+}
+
+.hero .konten h2 {
+    font-family: "poppins" , sans-serif;
+    font-size: clamp(10px,2.1em,40px);
+    color: rgb(28, 185, 28);
+    font-weight: 700;
+}
+
+.hero .konten .deskripsi {
+    width: 70%;
+    font-weight: 450;
+    font-size: clamp(10px,.9em,20px);
+}
+
+.hero .konten .deskripsi span {
+    color: rgb(28, 185, 28);
+}
+
+.hero .konten .list-tombol {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.hero .konten .list-tombol a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 20px;
+    background-color: rgb(49, 130, 49);
+    font-weight: 350;
+    border-radius: 4px;
+    font-size: clamp(10px,1em,24px);
+}
+
+.hero .konten .list-tombol a i {
+    margin-left: 8px;
+}
+
+.hero .konten .list-tombol a:hover {
+    color: green;
+    background-color: white;
+}
+
+.hero .konten .list-tombol a:nth-child(2) {
+    background-color: transparent;
+    backdrop-filter: blur(205px);
+    border: 1.5px solid white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.hero .konten .list-tombol a:nth-child(2):hover {
+    background-color: white;
+    color: green;
+}
+
+/* tentang */
+.tentang {
+    width: 100%;
+    padding: 10px;
+}
+
+.tentang .judul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.tentang .judul h3 {
+    font-family: "poppins" , sans-serif;
+    padding: 20px 5px;
+    font-weight: 500;
+}
+
+.tentang .judul span {
+    border-top: 1.5px solid teal;
+    width: 30%;
+}
+
+.tentang .konten {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    padding: 10px 0px;
+}
+
+.tentang .konten .left {
+    flex: 1 1 350px;
+    min-width: 150px;
+    max-width: 550px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tentang .konten .left .box {
+    width: 100%;
+    height: 70px;
+    max-height: 100px;
+    border: 1.5px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tentang .konten .left .box .logo i {
+    /* padding: 20px 25px; */
+    background-color: teal;
+    width: max-content;
+    font-size: clamp(10px,1.1em,28px);
+    height: 100%;
+    width: 70px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tentang .konten .left .box .judul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    text-align: left;
+    font-family: sans-serif;
+    padding: 2px 0px 2px 15px;
+}
+
+.tentang .konten .left .box .judul h3 {
+    padding: 0px;
+    width: 100%;
+}
+
+.tentang .konten .left .box .judul p {
+    margin: 0px;
+    font-family: "poppins" , sans-serif;
+    font-size: clamp(10px,.8em,20px);
+    width: 100%;
+}
+
+.tentang .konten .right {
+    display: flex;
+    align-items: flex-end;
+    flex: 1 1 350px;
+    min-width: 150px;
+    max-width: 550px;
+    min-height: 350px;
+    background-position: bottom;
+    background-size: cover;
+    background-image: url(gambar/school.jpg);
+}
+
+.tentang .konten .right p {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 128, 128, 0.807);
+    color: white;
+    font-family: "poppins" , sans-serif;
+}
+
+/* main */
+main {
+    width: 100%;
+}
+
+/* about school */
+.about-school {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-school .judul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.about-school .judul h3 {
+    text-align: center;
+    font-family: "poppins" , sans-serif;
+    font-weight: 500;
+    font-size: clamp(10px,1.2em,28px);
+}
+
+.about-school .judul span {
+    border-top: 1.5px solid black;
+    width: 35%;
+    padding: 1px;
+}
+
+.about-school .konten-about-school {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+.about-school .left {
+    min-width: 200px;
+    flex: 1 1 350px;
+    max-width: 600px;
+}
+
+.about-school .left img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.about-school .right {
+    min-width: 200px;
+    flex: 1 1 350px;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.about-school .right .judul {
+    padding: 0px;
+}
+
+.about-school .right .judul p {
+    font-weight: 650;
+    font-family: "poppins" , sans-serif;
+    font-size: clamp(10px,1.3em,30px);
+    padding: 0px;
+}
+
+.about-school .right .judul p span {
+    color: green;
+    border: none;
+}
+
+.about-school .right .deskripsi {
+    font-family: "roboto" , sans-serif;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px 0px 0px;
+    gap: 12px;
+}
+
+.about-school .right .deskripsi span {
+    border-left: 1.5px solid #333;
+    height: 110px;
+}
+
+.about-school .right .box-deskripsi {
+    display: flex;
+    gap: 20px;
+}
+
+.about-school .right .box-deskripsi .box {
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+    padding: 18px 15px;
+    gap: 12px;
+}
+
+.about-school .right .box-deskripsi .box .judul {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.about-school .right .box-deskripsi .box .judul p {
+    font-size: clamp(10px,1.1em,26px);
+    color: green;
+    /* text-align: center; */
+    margin: 0%;
+    padding: 0%;
+}
+
+.about-school .right .box-deskripsi .box .judul i {
+    color: green;
+    margin: 0px;
+    font-size: clamp(10px,1.1em,26px);
+}
+
+.about-school .right .box-deskripsi .box .deskripsi {
+    width: 100%;
+    padding: 0px 0px 0px 32px;
+}
+
+.about-school .right .box-deskripsi .box .deskripsi p {
+    font-family: "poppins" , sans-serif;
+    /* line-height: 23px; */
+    font-weight: 600;
+    font-size: clamp(10px,.8em,18px);
+}
+
+/* jurusan */
+.jurusan {
+    width: 100%;
+    padding: 20px;
+}
+
+.jurusan .judul {
+    padding: 0px 5px 20px 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.jurusan .judul h4 {
+    text-align: center;
+    font-size: clamp(10px,1.3em,40px);
+    font-family: "poppins" , sans-serif;
+    font-weight: 400;
+}
+
+.jurusan .judul span {
+    width: 35%;
+    border-top: 1.5px solid teal;
+}
+
+.jurusan .konten-jurusan {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 5px;
+    flex-wrap: wrap;
+}
+
+.jurusan .konten-jurusan .box {
+    flex: 1 1 250px;
+    min-width: 150px;
+    max-width: 350px;
+    min-height: 300px;
+    border: 1.5px solid teal;
+    padding: 0px 2px 10px 2px;
+    margin: 0%;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    border-top: 2.5px solid rgba(0, 0, 0, 0.509);
+    border-left: 5.5px solid rgba(0, 0, 0, 0.509);
+    border-right: 1.5px solid rgba(0, 0, 0, 0.509);
+    border-bottom: 7.5px rgba(0, 0, 0, 0.509) solid;
+}
+
+.jurusan .konten-jurusan .box .judul {
+    padding: 0px;
+}
+
+.jurusan .konten-jurusan .box .judul p {
+    background-color: rgb(106, 23, 106);
+    color: white;
+    padding: 7px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-family: "poppins" , sans-serif;
+    transform: translateY(-20px);
+}
+
+.jurusan .konten-jurusan .box .deskripsi {
+    padding: 0px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.jurusan .konten-jurusan .box .deskripsi p {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-family: "poppins" , sans-serif;
+    font-size: clamp(10px,1.6em,38px);
+    padding: 5px 5px 20px 5px;
+}
+
+.jurusan .konten-jurusan .box .deskripsi p span {
+    font-size: clamp(10px,.6em,20px);
+    font-weight: 500;
+    margin-left: 2px;
+}
+
+.jurusan .konten-jurusan .box .lorem {
+    padding: 0px 25px;
+}
+
+.jurusan .konten-jurusan .box .lorem p {
+    text-align: center;
+    font-weight: 550;
+    font-size: clamp(10px,.9em,24px);
+}
+
+.jurusan .konten-jurusan .box .list-info {
+    padding: 20px 15px 8px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jurusan .konten-jurusan .box .list-info ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.jurusan .konten-jurusan .box .list-info ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(10px,.9em,24px);
+}
+
+.jurusan .konten-jurusan .button-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 5px;
+}
+
+.jurusan .konten-jurusan a {
+    width: 80%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: rgb(217, 216, 220);
+    font-family: "poppins" , sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: clamp(10px,.9em,28px);
+}
+
+.jurusan .konten-jurusan a:hover {
+    background-color: green;
+    color: white;
+}
+
+/* fasilitas */
+.fasilitas {
+    width: 100%;
+}
+
+.judul-fasilitas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 5px;
+}
+
+.judul-fasilitas h5 {
+    font-family: "poppins" , sans-serif;
+    font-weight: 400;
+    font-size: clamp(10px,1.3em,30px);
+}
+
+.judul-fasilitas span {
+    width: 35%;
+    border-top: 1.5px solid teal;
+}
+
+.fasilitas .konten-fasilitas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 5px 20px 5px;
+}
+
+.fasilitas .konten-fasilitas .left {
+    min-width: 250px;
+    flex: 1 1 450px;
+    max-width: 550px;
+    min-height: 400px;
+    max-height: 450px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    color: white;
+    font-family: "poppins" , sans-serif;
+    position: relative;
+}
+
+.fasilitas .konten-fasilitas .left .background {
+    width: 100%;
+    height: 100%;
+    background-image: url(gambar/asrama.jpg);
+    filter: brightness(70%);
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    z-index: -1;
+    position: absolute;
+}
+
+.fasilitas .konten-fasilitas .left p {
+    color: white;
+    font-weight: 600;
+    margin: 10px;
+}
+
+.fasilitas .konten-fasilitas .right {
+    min-width: 250px;
+    flex: 1 1 450px;
+    max-width: 550px;
+    min-height: 400px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    font-family: "poppins" , sans-serif;
+}
+
+.fasilitas .konten-fasilitas .right .top {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+.fasilitas .konten-fasilitas .right .top .background {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://img.freepik.com/free-photo/3d-rendering-modern-loft-gym-fitness_105762-2020.jpg?semt=ais_hybrid&w=740&q=80);
+    filter: brightness(60%);
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    z-index: -1;
+    position: absolute;
+}
+
+.fasilitas .konten-fasilitas .right .top .deskripsi p {
+    color: white;
+    position: absolute;
+    font-family: "poppins" , sans-serif;
+    font-weight: 600;
+    bottom: 10px;
+    left: 10px;
+}
+
+/* bottom */
+.fasilitas .konten-fasilitas .right .bottom {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+.fasilitas .konten-fasilitas .right .bottom .background {
+    width: 100%;
+    height: 100%;
+    background-image: url(gambar/komputer.jpg);
+    filter: brightness(60%);
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    z-index: -1;
+    position: absolute;
+}
+
+.fasilitas .konten-fasilitas .right .bottom .deskripsi p {
+    color: white;
+    position: absolute;
+    font-family: "poppins" , sans-serif;
+    font-weight: 600;
+    bottom: 10px;
+    left: 10px;
+}
+
+/* lokasi sekolah */
+.maps-sekolah {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding: 20px 5px;
+}
+
+.maps-sekolah .judul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 5px;
+}
+
+.maps-sekolah .judul h5 {
+    text-align: center;
+    font-family: "poppins" , sans-serif;
+    font-weight: 400;
+    font-size: clamp(10px,1.3em,30px);
+}
+
+.maps-sekolah .judul span {
+    width: 35%;
+    border-top: 1.5px solid teal;
+}
+
+.maps-sekolah .konten-maps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maps-sekolah .konten-maps .konten-kiri {
+    flex: 1 1 200px;
+    min-width: 150px;
+    max-width: 320px;
+    min-height: 400px;
+    background-color: rgb(16, 132, 132);
+    color: white;
+    font-family: "poppins" , sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.maps-sekolah .konten-maps .konten-kiri h5 {
+    font-family: "poppins" , sans-serif;
+    font-size: clamp(10px,1.3em,30px);
+    font-weight: 650;
+}
+
+.maps-sekolah .konten-maps .konten-kiri p {
+    font-size: clamp(10px,.9em,24px);
+}
+
+.maps-sekolah .konten-maps .konten-kanan {
+    padding: 0px;
+    flex: 1 1 600px;
+    min-width: 450px;
+    max-width: 750px;
+    /* background-color: black; */
+}
+
+.maps-sekolah .konten-maps .konten-kanan iframe {
+    transform: translateY(2px);
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    padding: 30px;
+    background-color: rgb(49, 52, 49);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .judul h6 {
+    color: white;
+    font-family: "poppins" , sans-serif;
+    font-size: clamp(10px,1.3em,30px);
+}
+
+footer .konten-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+footer .konten-footer .box {
+    flex: 1 1 200px;
+    min-width: 120px;
+    max-width: 280px;
+} 
+
+footer .konten-footer .box p {
+    font-family: "poppins" , sans-serif;
+}
+
+footer .konten-footer .box .konten {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+footer .konten-footer .box .konten a,.konten-child {
+    font-size: clamp(10px,.9em,24px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+footer .konten-footer .box .judul .judul-text {
+    font-weight: 550;
+    font-size: clamp(10px,1em,28px);
+}
+
+/* mobile ui */
+@media screen and (max-width:767px) {
+    /* header [mobile] */
+    header {
+        padding: 12px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header .logo h1 {
+        font-size: clamp(10px,1.3em,28px);
+    }
+
+    header .logo p {
+        font-size: clamp(10px,.6em,18px);
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header .button-menu-mobile {
+        position: relative;
+        display: flex;
+    }
+
+    header .button-menu-mobile button {
+        rotate: 0deg;
+        border: none;
+        background-color: transparent;
+        font-size: clamp(10px,1em,30px);
+        background-color: teal;
+        color: white;
+        padding: 8px;
+        border-radius: 4px;
+    }
+
+    header .button-menu-mobile button.active {
+        rotate: 90deg;
+    }
+
+    header .button-menu-mobile .konten-menu-mobile {
+        position: absolute;
+        color: white;
+        background-color: rgb(71, 68, 65);
+        right: 0px;
+        top: 40px;
+        border-radius: 4px;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    header .button-menu-mobile .konten-menu-mobile.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    header .button-menu-mobile .konten-menu-mobile ul {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+    }
+
+    header .button-menu-mobile .konten-menu-mobile ul li {
+        list-style: none;
+    }
+
+    header .button-menu-mobile .konten-menu-mobile ul li a {
+        text-decoration: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 18px;
+        width: 100%;
+        font-family: "poppins" , sans-serif;
+        font-weight: 600;
+    }
+
+    header .button-menu-mobile .konten-menu-mobile ul li a:hover {
+        background-color: white;
+        color: #333;
+    }
+
+    /* hero [mobile] */
+    .hero {
+        padding: 0px;
+    }
+
+    .hero .konten {
+        padding: 0px;
+    }
+
+    .hero .konten .helo {
+        font-size: clamp(10px,.7em,20px);
+    }
+
+    .hero .konten h2 {
+        font-size: clamp(10px,1.5em,34px);
+    }
+
+    .hero .konten .deskripsi {
+        width: 95%;
+        font-size: clamp(10px,.8em,20px);
+    }
+
+    .hero .konten .list-tombol {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero .konten .list-tombol a {
+        font-size: clamp(10px,.9em,24px);
+        padding: 10px 20px;
+        font-weight: 550;
+    }
+
+    /* tentang [mobile] */
+    .tentang .judul h3 {
+        font-size: clamp(10px,1em,28px);
+    }
+
+    .tentang .judul span {
+        width: 18%;
+    }
+
+    .tentang .konten .left .box .judul {
+        padding: 0px 0px 0px 10px;
+    }
+
+    .tentang .konten .left .box .judul h3 {
+        font-size: clamp(10px,1em,24px);
+    }
+
+    .tentang .konten .left .box .judul p {
+        font-size: clamp(10px,.7em,18px);
+        line-height: 15px;
+    }
+
+    /* about school [mobile] */
+    .about-school .judul {
+        padding: 10px 0px;
+    }
+
+    .about-school .judul h3 {
+        font-size: clamp(10px,1.1em,28px);
+    }
+
+    .about-school .judul span {
+        width: 22%;
+    }
+
+    .about-school .konten-about-school .right .deskripsi span {
+        height: 170px;
+    }
+
+    .about-school .konten-about-school .box-deskripsi {
+        flex-direction: column;
+    }
+
+    .about-school .konten-about-school .box-deskripsi .box {
+        width: 100%;
+    }
+
+    /* jurusan [mobile] */
+    .jurusan .judul h4 {
+        font-size: clamp(10px,1.1em,28px);
+    }
+
+    .jurusan .judul span {
+        width: 22%;
+    }
+
+    .jurusan .konten-jurusan {
+        gap: 40px;
+    }
+
+
+    /* fasilitas [mobile] */
+    .judul-fasilitas h5 {
+        font-size: clamp(10px,1.1em,28px);
+    }
+
+    .judul-fasilitas span {
+        width: 28%;
+    }
+
+    .fasilitas .konten-fasilitas {
+        flex-direction: column;
+        padding: 0px 15px;
+    }
+
+    /* maps sekolah [mobile] */
+    .maps-sekolah .judul h5 {
+        font-size: clamp(10px,1.1em,28px);
+    }
+
+    .maps-sekolah .judul span {
+        width: 26%;
+    }
+
+    .maps-sekolah .konten-maps {
+        flex-direction: column;
+        width: 100%;
+        padding: 0px 10px;
+        gap: 20px;
+    }
+
+    .maps-sekolah .konten-maps .konten-kiri {
+        display: flex;
+        border-radius: 30px;
+        min-width: 150px;
+        flex: 1 1 250px;
+        max-width: 350px;
+    }
+
+    .maps-sekolah .konten-maps .konten-kanan {
+        min-width: 150px;
+        flex: 1 1 250px;
+        max-width: 450px;
+        min-height: 400px;
+    }
+
+    .maps-sekolah .konten-maps .konten-kanan .maps {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    /* footer [mobile] */
+    footer {
+        padding: 20px;
+    }
+
+    footer .konten-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    footer .konten-footer .box {
+        min-width: none;
+        flex: 0px;
+        width: max-content;
+        height: max-content;
+    }
+}
