@@ -966,6 +966,155 @@ footer .konten-footer .box .judul .judul-text {
     font-size: clamp(10px,1em,28px);
 }
 
+/* tab ui */
+@media screen and (min-width:768px) and (max-width:1200px) {
+    /* header [tab] */
+        header {
+        padding: 2px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header .logo h1 {
+        font-size: clamp(10px,1.3em,28px);
+    }
+
+    header .conten-menu-nav .konten {
+        position: absolute;
+        top: 100%;
+        right: 0px;
+        margin: 0px 0px;
+        width: max-content;
+        height: max-content;
+        padding: 5px;
+        opacity: 0; 
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.4s;
+    }
+
+    header .conten-menu-nav .konten.active {
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* tentang [tap] */
+    .tentang .judul h3 {
+        font-size: clamp(10px,1em,28px);
+    }
+
+    .tentang .judul span {
+        width: 18%;
+    }
+
+    .tentang .konten {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tentang .konten .left .box .judul {
+        padding: 0px 0px 0px 10px;
+    }
+
+    .tentang .konten .left .box .judul h3 {
+        font-size: clamp(10px,1em,24px);
+    }
+
+    .tentang .konten .left .box .judul p {
+        font-size: clamp(10px,.7em,18px);
+        line-height: 15px;
+    }
+
+    .tentang .konten .right {
+        width: 100%;
+    }
+
+    /* maps sekolah [mobile] */
+    .maps-sekolah .judul h5 {
+        font-size: clamp(10px,1.1em,28px);
+    }
+
+    .maps-sekolah .judul span {
+        width: 26%;
+    }
+
+    .maps-sekolah .konten-maps {
+        flex-direction: column;
+        width: 100%;
+        padding: 0px 10px;
+        gap: 20px;
+    }
+
+    .maps-sekolah .konten-maps .konten-kiri {
+        display: flex;
+        border-radius: 30px;
+        min-width: 350px;
+        flex: 1 1 450px;
+        max-width: 650px;
+    }
+
+    .maps-sekolah .konten-maps .konten-kanan {
+        min-width: 550px;
+        flex: 1 1 700px;
+        max-width: 950px;
+        min-height: 400px;
+    }
+
+    .maps-sekolah .konten-maps .konten-kanan .maps {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    /* footer [tab] */
+    footer {
+        padding: 20px;
+    }
+
+    footer .konten-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    footer .konten-footer .box {
+        min-width: none;
+        flex: 0px;
+        width: max-content;
+        height: max-content;
+    }
+
+        /* about school [tab] */
+    .about-school .judul {
+        padding: 10px 0px;
+    }
+
+    .about-school .judul h3 {
+        font-size: clamp(10px,1.1em,28px);
+    }
+
+    .about-school .judul span {
+        width: 22%;
+    }
+
+    .about-school .konten-about-school .right .deskripsi span {
+        height: 170px;
+    }
+
+    .about-school .konten-about-school .box-deskripsi {
+        flex-direction: column;
+    }
+
+    .about-school .konten-about-school .box-deskripsi .box {
+        width: 100%;
+    }
+
+}
+
 /* mobile ui */
 @media screen and (max-width:767px) {
     /* header [mobile] */
